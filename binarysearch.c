@@ -1,109 +1,45 @@
-//Aim: To perform aq stack operations using array
+//*AIM: To find the required element in Binary Search*//
+
+
 
 #include <stdio.h>
-#define MAX 100
-int stack[MAX];
-int top = -1;
-void push(int x)
-{
-    if (top >= MAX - 1)
-    {
-    printf("Stack overflow\n");
-    }
-    else
-    {
-    top++;
-     stack[top] = x;
-    }
-}
-int pop()
-{
-    if (top < 0)
-    {
-    printf("Stack underflow\n");
-    return -1;
-    }
-    else
-    {
-    int value = stack[top];
-    top--;
-    return value;
-    }
-}
-int peek()
-{
-    if (top < 0)
-    {
-     printf("Stack is empty\n");
-    return -1;
-    }
-    else
-    {
-    return stack[top];
-    }
-}
-int empty()
-{
-    return top == -1;
-}
-void display()
-{
-    if (empty())
-    {
-     printf("Stack is empty\n");
-    }
-    else
-    {
-    printf("Stack elements: ");
-    for (int i = top; i >= 0; i--)
-    printf("%d ", stack[i]);
-    printf("\n");
-    }
-}
 int main()
 {
-    int choice, value;
-    int n;
-    printf("Enter total size of stack (max %d): ", MAX);
+    int i, n, low, high, mid, a[10], key;
+    
+    printf("Enter the number of elements:\n");
     scanf("%d", &n);
-    if (n > MAX)
+    
+    printf("Enter the elements in sorted order:\n");
+    for (i = 0; i < n; i++)
     {
-     printf("Size exceeds limit\n");
-    return 0;
+        scanf("%d", &a[i]);
     }
-    while (1)
+    
+    printf("Enter the element to be searched:\n");
+    scanf("%d", &key);
+    
+    low = 0;
+    high = n - 1;
+    
+    while (low <= high)
     {
-    printf("\n1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit\nEnteryour choice: ");
-    scanf("%d", &choice);
-    switch (choice)
-    {
-             case 1:
-                printf("Enter value to push: ");
-                scanf("%d", &value);
-                push(value);
-                break;
-
-            case 2:
-                value = pop();
-                if (value != -1)
-                    printf("Popped value: %d\n", value);
-                break;
-
-            case 3:
-                value = peek();
-                if (value != -1)
-                    printf("Top value: %d\n", value);
-                break;
-
-            case 4:
-                display();
-                break;
-
-            case 5:
-                return 0;
-
-            default:
-                printf("Invalid choice\n");
+        mid = (low + high) / 2;
+        
+        if (key == a[mid])
+        {
+            printf("Successful search: element found at position %d\n", mid + 1);
+            return 0;
+        }
+        else if (key < a[mid])
+        {
+            high = mid - 1;
+        }
+        else
+        {
+        low = mid + 1;
         }
     }
 }
+
+
