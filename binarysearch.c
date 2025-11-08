@@ -1,4 +1,4 @@
-                                    ---2.BINARY SEARCH---
+                                    ---//BINARY SEARCH//---
 
 //*AIM: To find the required element in Binary Search*//
 
