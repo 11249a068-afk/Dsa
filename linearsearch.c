@@ -1,6 +1,6 @@
                                                              --1.LINEAR SEARCH--
                                    
-//AIM: To find the required element in linear Search/
+//*AIM: To find the required element in linear Search*//
                                                                  
 🧭 Algorithm:  
                                                                  
