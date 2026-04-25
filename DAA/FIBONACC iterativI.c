@@ -1,4 +1,4 @@
-                                                                   //fibonacci in recursive//
+                                                                   //fibonacci in itertive//
     //aim: To generate Fibonacci series up to n terms and display the nth term.//
 #include <stdio.h>
 int main() 
